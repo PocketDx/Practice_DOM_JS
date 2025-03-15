@@ -8,14 +8,30 @@ document.getElementById("btnTexto").addEventListener("click", function () {
 document.getElementById("btnColor").addEventListener("click", function () {
     // Lectura recomendada: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
     // TODO: Usar classList.toggle() para alternar un fondo diferente en el body
+    const body = document.querySelector("body");
+    const clase = body.classList;
+
+    body.addEventListener("click",() =>{
+        const resultado = clase.toggle("bg-green-500");
+    })
 });
 
 // 🟢 DESAFÍO 3: Agregar tareas dinámicamente a la lista
 document.getElementById("btnAgregar").addEventListener("click", function () {
     // TODO: Leer el valor del input "inputTarea"
+    let tarea = document.getElementById("inputTarea").value;
     // TODO: Crear un nuevo <li> y agregarle el texto ingresado
+    let nuevaTarea = document.createElement("li");
+    nuevaTarea.textContent = tarea;
     // TODO: Agregar un botón dentro del <li> para eliminar la tarea
+    let btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "- Eliminar";
+    btnEliminar.addEventListener("click", function(){
+        nuevaTarea.remove();
+    });
+    nuevaTarea.appendChild(btnEliminar);
     // TODO: Agregar el <li> a la lista "listaTareas"
+    document.getElementById("listaTareas").appendChild(nuevaTarea);
 });
 
 // 🟢 DESAFÍO 4: Cargar datos de usuarios desde una API pública
