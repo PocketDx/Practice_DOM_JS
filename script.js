@@ -1,6 +1,7 @@
 // 🟢 DESAFÍO 1: Cambiar el texto de un párrafo al hacer clic en el botón
 document.getElementById("btnTexto").addEventListener("click", function () {
     // TODO: Seleccionar el párrafo con id "texto" y cambiar su contenido a "¡Texto cambiado!"
+    document.getElementById("texto").textContent = "Nuevo Texto, Facilito"
 });
 
 // 🟢 DESAFÍO 2: Alternar el color de fondo de la página al hacer clic
