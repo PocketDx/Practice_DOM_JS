@@ -38,6 +38,9 @@ document.getElementById("btnAgregar").addEventListener("click", function () {
 document.getElementById("btnUsuarios").addEventListener("click", function () {
     // Lectura recomendada: https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
     // TODO: Hacer una petición a "https://jsonplaceholder.typicode.com/users"
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(data => console.log(data))
     // TODO: Mostrar solo los nombres y correos electrónicos en "listaUsuarios"
     // TODO: Si la petición falla, mostrar un mensaje de error en consola
 });
