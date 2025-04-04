@@ -38,11 +38,22 @@ document.getElementById("btnAgregar").addEventListener("click", function () {
 document.getElementById("btnUsuarios").addEventListener("click", function () {
     // Lectura recomendada: https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
     // TODO: Hacer una petición a "https://jsonplaceholder.typicode.com/users"
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/usersq")
     .then(response => response.json())
-    .then(data => console.log(data))
     // TODO: Mostrar solo los nombres y correos electrónicos en "listaUsuarios"
+    .then(data => {
+        const listaUsuarios = document.getElementById("listaUsuarios");
+        listaUsuarios.innerHTML = ""; // Limpiar la lista antes de agregar nuevos usuarios
+        data.forEach(user => {
+            const li = document.createElement("li");
+            li.textContent = `${user.name} - ${user.email}`;
+            listaUsuarios.appendChild(li);
+        });
+    })
     // TODO: Si la petición falla, mostrar un mensaje de error en consola
+    .catch(error => {
+        console.error("Hubo un error:", error);
+    });
 });
 
 // 🟢 DESAFÍO 5 (Extra): Guardar y cargar la lista de tareas usando localStorage

@@ -146,14 +146,6 @@ function eliminarTarea(index) {
     cargarTareas();
 }
 
-
-
-
-
-
 // 🟢 DESAFÍO 6 (Extra): Filtrar usuarios con correos que contengan "biz"
 // Lectura recomendada: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 // TODO: Modificar el código del desafío 4 para mostrar solo usuarios con "@biz" en su email
-//Se hizo el reto en el desafio 4 
-
-
